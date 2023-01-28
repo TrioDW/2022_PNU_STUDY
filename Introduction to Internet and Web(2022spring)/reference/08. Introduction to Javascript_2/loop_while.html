@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<title>while문</title>
+<script>	 
+	function show() {
+		var str = "" ;
+		var i=1;
+		while (i<=9) {
+			str = str + i + "<br>" ;
+			i++;
+		}
+		document.getElementById("msg").innerHTML = str ;
+	}
+	 
+</script>
+</head>
+<body>
+<form name="myform">	
+	<input type="button" value="반복문연습" onclick="show()">	
+	<div id="msg">		
+	</div>
+</form>
+</body>
+</html>

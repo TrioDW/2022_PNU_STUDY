@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script>
+            // jQuery로 구현한 코드
+            /*$(document).ready(function() {
+                $("button").click(function(){
+                    $.get("http://localhost:3000/market", function(data, status) {
+                        if(status == "success") {
+                            document.getElementById("raw_data").innerHTML = data;
+        
+                            var parsed = JSON.parse(data);
+                            for (i in parsed.getLifeInfo.item){
+                                var cur = parsed.getLifeInfo.item[i];
+                                var pid = "#demo" + i;
+                                for (j in cur){
+                                    $(pid).text($(pid).text() + cur[j]+ " ");
+                                }
+                            }
+                        }
+                    });
+                });
+            });*/
+            // XHR로 구현한 코드
+            var xhr = new XMLHttpRequest();
+            xhr.withCredentials = true;
+        
+            xhr.addEventListener("readystatechange", function() {
+            if(this.readyState === 4) {
+                //console.log(this.responseText);
+                document.getElementById("raw_data").innerHTML = this.responseText;
+        
+                var parsed = JSON.parse(this.responseText);
+                for (i in parsed.getLifeInfo.item){
+                    var cur = parsed.getLifeInfo.item[i];
+                    var pid = "demo" + i;
+                    for (j in cur){
+                        document.getElementById(pid).innerHTML += cur[j] + " ";
+                    }
+                }
+            }
+            });
+            
+            function displayResponse(){
+                xhr.open("GET", "http://localhost:3000/market");
+                xhr.send();
+            }
+        </script>
+    </head>
+<body>
+
+<p>Click the button</p>
+
+<button onclick="displayResponse()">button</button>
+
+<p id="raw_data"></p>
+<p id="demo0"></p>
+<p id="demo1"></p>
+<p id="demo2"></p>
+<p id="demo3"></p>
+<p id="demo4"></p>
+<p id="demo5"></p>
+<p id="demo6"></p>
+<p id="demo7"></p>
+<p id="demo8"></p>
+<p id="demo9"></p>
+
+</body>
+</html> 

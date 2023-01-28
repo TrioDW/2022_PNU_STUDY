@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            table {
+                border: 2px solid black;
+                width: 100%;
+            }
+
+            th, td {
+                border: 1px solid black;
+            }
+
+            td {
+                text-align: right;
+            }
+        </style>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script>
+            var xhr = new XMLHttpRequest();
+            xhr.withCredentials = true;
+            xhr.addEventListener("readystatechange", function () {
+                if (this.readyState === 4) {
+                    console.log(this.responseText);
+                    //document.getElementById("raw_data").innerHTML = this.responseText;
+                    var tbl = document.getElementById('tbl0');
+                    tbl.innerHTML = "<tr><th>baseDate</th><th>baseTime</th><th>category</th><th>nx</th><th>ny</th><th>obsrValue</th></tr>";
+        
+                    var parsed = JSON.parse(this.responseText);
+                    for (i in parsed.response.body.items.item) {
+                        var cur = parsed.response.body.items.item[i];    
+                        /*
+                        var tr = document.createElement('tr');
+        
+                        var td = document.createElement('td');
+                        td.innerHTML = cur.baseDate;
+                        tr.appendChild(td);
+        
+                        td = document.createElement('td');
+                        td.innerHTML = cur.baseTime;
+                        tr.appendChild(td);
+        
+                        td = document.createElement('td');
+                        td.innerHTML = cur.category;
+                        tr.appendChild(td);
+        
+                        td = document.createElement('td');
+                        td.innerHTML = cur.nx;
+                        tr.appendChild(td);
+        
+                        td = document.createElement('td');
+                        td.innerHTML = cur.ny;
+                        tr.appendChild(td);
+        
+                        td = document.createElement('td');
+                        td.innerHTML = cur.obsrValue;
+                        tr.appendChild(td);
+        
+                        tbl.appendChild(tr);
+                        */
+                        tbl.innerHTML += "<tr><td>" + cur.baseDate + "</td><td>" + cur.baseTime + "</td><td>" 
+                            + cur.category + "</td><td>" + cur.nx + "</td><td>" + cur.ny + "</td><td>" + cur.obsrValue + "</td></tr>";
+                    }
+                }
+            });
+            
+            function displayResponse(){
+                if(document.getElementById('base_date').value.length < 8)
+                {
+                    alert("base_date length error");
+                    return;
+                }
+                else if(document.getElementById('base_time').value.length < 4)
+                {
+                    alert("base_time length error");
+                    return;
+                }
+
+                var url = "http://localhost:3000/weather"
+                var base_date = document.getElementById('base_date').value;
+        
+                var base_time = document.getElementById('base_time').value;
+                var nx = document.getElementById('nx').value;
+                var ny = document.getElementById('ny').value;
+                var dataType = document.getElementById('dataType').value;
+        
+                url = url + "?" + "base_date="+base_date +"&base_time="+base_time +"&nx="+nx +"&ny="+ny +"&dataType="+dataType 
+        
+                xhr.open("GET", url);
+                xhr.send();
+        
+            }
+        </script>
+    </head>
+<body>
+
+<p>Click the button</p>
+
+<button onclick="displayResponse()">button</button>
+
+<form>
+    <label for='base_date'> Base Date:</label><br>
+    <input type="text" id='base_date' name='base_date' value='20220602'><br>
+    <label for='base_time'> Base Time:</label><br>
+    <input type="text" id='base_time' name='base_time' value='1800'><br>
+    <label for='nx'> nx:</label><br>
+    <input type="text" id='nx' name='nx' value='100'><br>
+    <label for='ny'> ny:</label><br>
+    <input type="text" id='ny' name='ny' value='100'><br>
+    <label for='dataType'> dataType:</label><br>
+    <input type="text" id='dataType' name='dataType' value='json'><br>
+</form>
+
+<table id="tbl0"> </table>
+
+<p id="raw_data"></p>
+
+</body>
+</html> 

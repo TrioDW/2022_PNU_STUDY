@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>JAVASCRIPT 연습</title>
+<script>
+	function show(num) {
+		/*
+		if (num == 1) {
+			document.getElementById('p1').innerHTML = "<h2>안녕하세요.</h2>" ;
+			document.getElementById('p2').innerHTML = "두번째영역" ;
+		}
+		else if (num == 2) {
+			document.getElementById('p1').innerHTML = "첫번째영역" ;
+			document.getElementById('p2').innerHTML = "<h2>안녕하세요.</h2>" ;
+		}
+		*/
+		switch(num) {
+            case 1: document.getElementById('p1').innerHTML = "<h2>안녕하세요.</h2>" ;
+                    document.getElementById('p2').innerHTML = "두번째영역" ;   
+					break;
+	        case 2: document.getElementById('p1').innerHTML = "첫번째영역" ;
+					document.getElementById('p2').innerHTML = "<h2>안녕하세요.</h2>" ;
+					break;
+		}
+
+	}	
+</script>
+</head>
+<body>
+<h1>
+	JAVASCRIPT 연습
+</h1>
+<p id="p1">
+	첫번째 영역
+</p>
+<p id="p2">
+	두번째 영역
+</p>
+<form name="form1">
+	<input type="button" value="첫번째영역" onclick="show(1);">
+	<input type="button" value="두번째영역" onclick="show(2);">
+</form>
+</body>
+</html>
+

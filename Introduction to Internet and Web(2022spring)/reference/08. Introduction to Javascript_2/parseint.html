@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>JAVASCRIPT 연습</title>
+<script>
+	function show() {
+	
+		// parseInt를 사용하지 않으면 문자열로 취급 ! 
+
+		/* var num1 = form1.txt1.value  ;
+		var num2 = form1.txt2.value  ; */
+	
+		 
+		var num1 = parseInt(form1.txt1.value) ;
+		var num2 = parseInt(form1.txt2.value) ;
+		 
+		var num3 = num1 + num2 ;
+		
+		console.log(num1);
+		console.log(num2);
+		console.log(num3);
+		form1.txt3.value = num3 ;
+	}	
+</script>
+</head>
+<body>
+<h1>
+	JAVASCRIPT 연습
+</h1>
+<form name="form1">
+	<input type="text" name="txt1" size="6">
+	+
+	<input type="text" name="txt2" size="6">
+	<input type="button" value=" = " onclick="show();"> 
+	<input type="text" name="txt3" size="6">
+</form>
+</body>
+</html>
+

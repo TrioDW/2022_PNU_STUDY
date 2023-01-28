@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset = "UTF-8">
+    <title>Project</title>
+    <link rel="stylesheet" href="project.css">
+    <script type="text/javascript" src="project.js"></script>
+</head>
+<body>
+    <header>
+        STOCK INFORMATION SEARCH 
+    </header>
+    <nav>
+        <a id = "index1" onclick="index1()">주식 정보 조회</a> &nbsp; &nbsp;
+        <a id = "index2" onclick="index2()" href="http://localhost:3000/mapapi.html">주식회사 위치 조회</a> &nbsp; &nbsp;
+    </nav>
+    <br>
+    <div id="info1">
+        <div id="basic_search" class="basic_search"> 
+            주식 기본 정보 조회 
+            <input type="text" class="basic_search_1" placeholder="삼성전자"> 
+            <input type="button" value="검색" onclick="stack_L()" class="basic_search_2"> 
+        </div>
+        <table id="basic_info" class="basic_info">
+            <th>한글 종목명</th>
+            <th>영문 종목명</th>
+            <th>주식종류</th>
+            <th>발행일</th>
+            <th>단축코드</th>
+        </table>
+    </div>
+    <div id="info2">
+        <div id="allot_search" class="allot_search"> 
+            주식 배당 정보 조회 
+            <input type="text" class="allot_search_1" placeholder="삼성전자"> 
+            <input type="submit" value="검색" onclick="stack_R()" class="allot_search_2"> 
+        </div>
+        <table id="allot_info">
+            <th>주식발행회사명</th>
+            <th>배당기준일자</th>
+            <th>현금배당지급일자</th>
+            <th>주식일반배당금액</th>
+        </table>
+    </div>
+    <footer>
+        <a href="https://cse.pusan.ac.kr/">&copy; PNU CSE 202255513 김대욱</a>
+    </footer>
+</body>
+</html>

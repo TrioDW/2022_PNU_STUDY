@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>JAVASCRIPT 연습</title>
+<script>
+	function show1() {
+		document.getElementById("pid1").innerHTML = "<b>첫번째영역 : 안녕하세요.</b>";		
+		//document.write("안녕하세요. write");
+	}
+	function show2() {
+		document.getElementsByTagName("p")[1].innerHTML = "두번째영역 : 안녕하세요.";
+		//console.log("안녕하세요. console"); 여러 개 바꿀 수 있음 (useful)
+	}
+	function show3() {
+		document.getElementsByClassName("pc2")[1].innerHTML = "세번째영역 : 안녕하세요.";
+	}
+</script>
+</head>
+<body>
+<h1>
+	JAVASCRIPT 연습
+</h1>
+<p class="pc1" id="pid1">
+<b>첫번째 영역입니다.</b>
+</p>
+<p class="pc2" id="pid2">
+두번째 영역입니다.
+</p>
+<p class="pc2" id="pid3">
+세번째 영역입니다.
+</p>
+<form name="form1">
+	<input type="button" value="첫번째영역" onclick="show1();">
+	<input type="button" value="두번째영역" onclick="show2();">
+	<input type="button" value="세번째영역" onclick="show3();">
+</form>
+</body>
+</html>

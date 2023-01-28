@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang = "ko">
+<head>
+    <meta charset = "UTF-8">
+    <title>HTML연습</title>
+    <link rel = "stylesheet" href = "https://fonts.googleapis.com/icon?family=Material+Icons">
+    <style>
+        header {
+            background-color : #005766;
+            width : 100%;
+            height : 170px;
+            margin : 10px 0px 0px 0px;
+        }
+        header h1 {
+            padding : 15px;
+            color : #fff;
+            text-align : left;
+        }
+        header h3 {
+            color : #fff;
+            text-align : left;
+        }
+        header img {
+            float : left;
+            margin : 15px 15px 0px 15px;
+        }
+        nav {
+            background-color: #3DB7CC;
+            padding : 10px 15px;   
+        }
+        nav a:hover {
+            background-color: #fff;
+            color : #3DB7CC;
+            padding : 10px;
+        }
+        nav a {
+            color : #fff;
+            text-decoration: none;
+        }
+        #s1, #s3{
+            border-style: solid;
+            border-color: #3DB7CC;
+            border-width: 1px;
+            padding: 0px 10px 0px 10px;
+            margin: 10px 0px 10px 10px;
+            float: left;
+            width: 40%;
+            height: 300px;
+        }
+        #s2, #s4 {
+            float: right;
+            border-style: solid;
+            border-color: #3DB7CC;
+            border-width: 1px;
+            padding: 0px 10px 0px 10px;
+            margin: 10px 10px 10px 0px;
+            width: 40%;
+            height: 300px;
+        }
+        section a {
+            text-decoration: none;
+        }
+        section h2 {
+           background-color: #005766;
+           color: #fff;
+           padding: 10px;
+           margin: 10px 0px;
+       }
+       footer {
+           clear: both;
+           background-color: #EAEAEA;
+           padding: 10px;
+       }
+       section a:link { color: blue; }
+       section a:visited { color: blue; }
+       
+       #s1 p     {padding: 5px 20px 0px 20px;}
+       #s2 ul li {padding: 5px;}
+       #s3 ul li {padding: 5px;}
+       #s4 p     {padding: 5px;}
+
+    </style>
+</head>
+
+
+<body>
+    <header>
+        <img src = "img/pnu.png" width = 150px>
+        <h1>DAEWOOK KIM</h1>
+        <h3>김대욱</h3>
+
+    </header>
+
+    <nav>
+        <a href = "#s1">[개인정보]</a> &nbsp; &nbsp;
+        <a href = "#s2">[학력사항]</a> &nbsp; &nbsp;
+        <a href = "#s3">[자격사항]</a> &nbsp; &nbsp;
+        <a href = "#s4">[자기소개]</a>
+    </nav>
+
+    <section id = "s1">
+        <h2>개인정보</h2>
+
+        <p><span class="material-icons">call</span>&nbsp;&nbsp;전화번호</p>
+        <p><span class="material-icons">email</span>&nbsp;&nbsp;이메일</p>
+        <p><span class="material-icons">assignment</span>&nbsp;&nbsp;주소</p>
+    
+    </section>
+
+    <section id = "s2">
+        <h2>학력사항</h2>
+        <ul>
+            <li><a href = "https://www.pusan.ac.kr/kor/Main.do"> 대학교 재학</a></li>
+            <li><a href = "http://ysjeil-h.gne.go.kr/ysjeil-h/main.do"> 고등학교 졸업</a></li>
+            <li><a href = "https://www.pusan.ac.kr/kor/Main.do"> 중학교 졸업</a></li>
+            <li><a href = "https://www.pusan.ac.kr/kor/Main.do"> 초등학교 졸업</a></li>
+        </ul>
+    </section>
+
+    <section id = "s3">
+        <h2>자격사항</h2>
+        <ul style = "list-style-type: decimal;">
+            <li>ITQ</li>
+            <li>GTQ 2급</li>
+            <li>태권도 3단</li>
+        </ul>
+    </section>
+
+    <section id = "s4">
+        <h2>자기소개</h2>
+        <p><a href = "assign_01_202255513_김대욱.html">SWOT 분석</a> </p>
+
+        <p>위 링크에서 저에 대한 SWOT 분석 내용을 확인할 수 있습니다.</p>
+        
+    </section>
+
+    <footer>
+        &copy; KIM DAEWOOK, kdu5233@pusan.ac.kr
+    </footer>
+</body>
+</html>

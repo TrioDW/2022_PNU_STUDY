@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>JAVASCRIPT 연습</title>
+<style>
+	#msg {
+		border: 2px solid green ;
+		margin-top : 20px;
+		padding: 20px;
+		width : 300px;
+		height : 100px;
+		box-sizing : border-box;
+	}
+</style>
+<script>
+	function show() {
+		var str = "" ;
+		
+		str = '"' + form1.txt1.value + "님 안녕하세요." + '"' ; // form의 name을 사용 !
+		document.getElementById("msg").innerHTML = str; 
+	}	
+</script>
+</head>
+<body>
+<h1>
+	JAVASCRIPT 연습
+</h1>
+<form name="form1">
+	<input type="text" name="txt1" id="txt1" placeholder="값입력">
+	<input type="button" value="확인" onclick="show();">
+	<input type="reset" value="취소">
+</form>
+<div id="msg">
+</div>
+</body>
+</html>
+

@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<title>for문</title>
+<script>	 
+	function show() {
+        var divtags = document.getElementsByTagName('div') ;
+         
+		var str = "" ;
+		for (var i=0; i< divtags.length; i++) {
+			divtags[i].innerHTML = i + 1 ;
+		}		
+	}
+	 
+</script>
+</head>
+<body>
+<form name="myform">	
+	<input type="button" value="반복문연습" onclick="show()">
+</form>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+</body>
+</html>

@@ -1,0 +1,103 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<title>설문작성</title>
+<style>
+    .box1, .box2 {
+		padding: 10px; 
+		margin : 10px;
+		width: 400px;  /* 고정 width 길이 */
+	}
+	.box1 {		
+        border-radius: 10px;  /* 사용할것 ! */
+		border: 2px solid #73AD21;
+		background-color : #73AD21;
+		height: 20px; 
+		color : white;
+		text-align : center;
+	}  
+	div > label {
+		display : inline-block ;
+        background-color: aliceblue;
+        padding : 5px;
+		width : 100%;
+		height : 25px;
+        font-size: 14px;
+	} 	
+    span {
+        display : inline-block ;
+        width : 45%;
+        padding : 20px;
+        font-size: 12px;
+        box-sizing: border-box;
+        text-align: center;
+    }
+    img {
+        width : 50% ;
+    }
+	input[type=text], input[type=password] {
+		width : 100%;
+		height : 40px;
+		border : 1px solid #8C8C8C;
+		box-sizing: border-box;
+		padding : 5px;
+	}
+	input[type=submit], input[type=reset]{
+		background-color : #73AD21;
+		width : 45%;
+		border : none;
+		padding : 10px;
+		margin : 5px;
+		color : white ;
+        box-sizing: border-box;
+	}
+</style>
+</head>
+<body>
+<form name="myform" method="get" action="#">
+	<div class="box1">
+		당신이 좋아하는 과일을 선택해 보세요.
+	</div>
+	<div class="box2">
+        <div>
+            <label for="txt_name">성명</label><br/>
+            <input type="text" name="txt_name" id="txt_name" placeholder="성명 입력">
+        </div>
+        <br>
+        <div>
+            <label for="txt_pwd">비밀번호</label><br/>
+            <input type="password" name="txt_pwd" id="txt_pwd" placeholder="비밀번호 입력"> 
+        </div>
+        <br>
+		<div>
+            <label>좋아하는 과일을 선택하세요.</label><br/>
+            <span>
+                <label>
+                    <input type="radio" name="item01" value="딸기"><img src="./img/img1.png">
+                </label> 
+            </span>
+            <span>
+                <label>
+                    <input type="radio" name="item01" value="바나나"><img src="./img/img2.png">
+                </label> 
+            </span>
+            <span>
+                <label>
+                    <input type="radio" name="item01" value="사과"><img src="./img/img3.png">
+                </label>
+            </span>
+            <span>
+                <label>
+                    <input type="radio" name="item01" value="수박"><img src="./img/img4.png">
+                </label> 
+            </span> 
+		</div>
+        <br>
+		<div>
+            <input type="submit" value="결과보기">
+            <input type="reset" value="취소">
+        </div>
+	</div>
+</form>
+</body>
+</html>

@@ -1,0 +1,59 @@
+// HW9-2_202255513
+
+ /* 풀다운 저항을 사용하여 버튼연결
+ * 버튼을 누를 때 마다 모터가 정지, 최대속도 1/2, 최대 속도 상태로 변하도록 함
+ */
+
+int button_pin = 14;
+int Enable1 = 38;
+int PWM1 = 9;
+int DIR1 = 39;
+
+int count = 0;
+// 버튼의 상태
+boolean state_previous = false; 
+boolean state_current;
+ 
+int Button_Count(){
+  state_current = digitalRead(button_pin); 
+  if (state_current) { 
+  if (state_previous == false) {
+    count++;                                                                                                                                                                                                  
+    state_previous = true;
+  }
+  delay(50); // 디바운싱
+  }
+  else {
+    state_previous = false;
+  }
+  return count;
+}
+
+void setup() {
+  Serial.begin(9600);
+  pinMode(button_pin, INPUT);
+  
+  pinMode(Enable1, OUTPUT);
+  pinMode(DIR1, OUTPUT);
+  pinMode(PWM1, OUTPUT);
+  
+  digitalWrite(Enable1, HIGH);
+  //모터 정방향, 최저속도
+  digitalWrite(DIR1, HIGH);
+  digitalWrite(PWM1, HIGH);
+}
+
+void loop() {
+  int state = Button_Count() % 3; //0 - 정지 , 1 - 최고속도의 1/2, 2 - 최고속도
+  Serial.println(count);
+  Serial.println(state);
+  if(state == 0){
+    digitalWrite(PWM1, HIGH);
+  }
+  else if(state == 1){
+    analogWrite(PWM1, 255/2);
+  }
+  else if(state = 2){
+    digitalWrite(PWM1, LOW);
+  }
+}

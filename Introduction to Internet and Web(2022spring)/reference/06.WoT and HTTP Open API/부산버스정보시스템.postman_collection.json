@@ -1,0 +1,50 @@
+{
+	"info": {
+		"_postman_id": "4871bf4d-4496-4106-8cfb-685eb72f938e",
+		"name": "부산버스정보시스템",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "정류소 정보 조회",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://apis.data.go.kr/6260000/BusanBIMS/busStopList?serviceKey=L4FGPswC%2FnH8LsJ%2B6vrL%2FmSdtf%2BpEV%2BXLt4AEoDo2HuHZNlkjNM7jJb1eqpsjYi2RJ%2FK0RgJrzqRO0HMeSUezg%3D%3D&numOfRows=10&pageNo=1&bstopnm=부산대학교",
+					"protocol": "http",
+					"host": [
+						"apis",
+						"data",
+						"go",
+						"kr"
+					],
+					"path": [
+						"6260000",
+						"BusanBIMS",
+						"busStopList"
+					],
+					"query": [
+						{
+							"key": "serviceKey",
+							"value": "L4FGPswC%2FnH8LsJ%2B6vrL%2FmSdtf%2BpEV%2BXLt4AEoDo2HuHZNlkjNM7jJb1eqpsjYi2RJ%2FK0RgJrzqRO0HMeSUezg%3D%3D"
+						},
+						{
+							"key": "numOfRows",
+							"value": "10"
+						},
+						{
+							"key": "pageNo",
+							"value": "1"
+						},
+						{
+							"key": "bstopnm",
+							"value": "부산대학교"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

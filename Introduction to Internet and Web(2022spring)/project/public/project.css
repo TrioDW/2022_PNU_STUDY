@@ -1,0 +1,94 @@
+
+/* 배경 격자무늬 */
+body {
+    background-image: url('https://i.pinimg.com/736x/b7/1a/eb/b71aeb3fa3143c758a9248521c2e2f09.jpg')
+}
+header {
+    text-align: center;
+    background-color: None;
+    color: lightcoral;
+    font-family: "yg-jalnan";
+    font-size: 70px;
+    padding-left: 5px;
+}
+nav {
+    text-align: center;
+}
+nav a {
+    font-family: "yg-jalnan";
+    font-size: 25px;
+    color : lightslategray;
+    text-decoration: none;
+    padding-left: 5px;
+}
+nav a:hover {
+    font-family: "yg-jalnan";
+    font-size: 25px;
+    color : lightskyblue;
+    text-decoration: none;
+    padding-left: 5px;
+}
+footer {
+    background-color: None;
+    color: #202020;
+    text-align: center;
+    padding: 10px;
+    font-family: "yg-jalnan";
+    font-size: 20px;
+    clear: both;
+}
+#info1, #info2 {
+    border: 1px solid lavender ;
+    background-color: lavender;
+    width: 47%;
+    height: 690px;
+}
+div[id="info1"] {
+    float: left;
+    margin-left: 1%;
+    text-align: center;
+}
+div[id="info2"] {
+    float: right;
+    margin-right: 1%;
+    text-align: center;
+}
+#basic_search, #basic_info, #allot_search, #allot_info {
+    visibility: hidden;
+    text-align: center;
+    margin: 10px;
+}
+div > div {
+    text-align: center;
+    font-family: "yg-jalnan";
+    font-size: 17px;
+    padding: 20px;
+}
+.basic_search_1, .allot_search_1 {
+    height: 19px;
+}
+.basic_search_2, .allot_search_2 {
+    height: 25px;
+}
+div + table {
+    padding-right: 10px;
+    width: 100%;  
+    font-family: "yg-jalnan";
+    font-size: 18px;
+} 
+@font-face {
+font-family: 'yg-jalnan';
+src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.2/JalnanOTF00.woff') format('woff');
+font-weight: normal;
+font-style: normal;
+}
+a:link, a:visited, a:active {
+    color : lightslategray;
+    text-decoration: none;
+}
+input.basic_search_1::placeholder {
+    color: lavender;
+}
+input.allot_search_1::placeholder {
+    color: lavender;
+}

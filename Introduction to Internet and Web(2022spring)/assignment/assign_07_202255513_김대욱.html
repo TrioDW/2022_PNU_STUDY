@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>피보나치 수열</title>
+
+<style>
+	.box1 {
+		border-radius: 10px;
+		border: 2px solid #73AD21;
+		background-color : #73AD21;
+		padding: 10px; 
+		margin : 10px;
+		width: 400px;
+		height: 20px; 
+		color : white;
+		text-align : center;
+	}
+	.box2 {		 
+		padding: 10px; 
+		margin : 10px;
+		width: 400px; 
+		text-align : center;
+	} 
+	#msg {
+		margin : 10px;
+		padding: 10px;
+		font-size : 14px;
+		color : red;
+		text-align : left;
+	}
+	#msg2 {
+		margin : 10px;
+		padding: 10px;
+		font-size : 14px;
+		color : blue;
+		text-align : left;
+	}
+	#msgimg {
+		width : 400px; 
+		margin : 10px;
+		padding: 10px;  
+		border: 1px solid #73AD21;
+		text-align : center;
+	}
+	.b1 {
+		width : 100px;
+		height :100px;
+		font-size : 30px;
+		text-align : center;
+	}
+
+	
+	.card1 {
+		width : 50px;
+		height :60px;
+		border: 2px solid #73AD21;
+		border-radius: 5px;
+		margin: 5px;
+		padding-top:6px;
+		font-size: 25px;
+		float: left;
+	}
+	
+	.card2 {
+		width : 50px;
+		height :60px;
+		background-color: yellow;
+		border: 2px solid #73AD21;
+		border-radius: 5px;
+		margin: 5px;
+		padding-top:6px;
+		font-size: 25px;
+		float: left;
+	}
+
+	
+	.cardClear {
+		clear : both;
+	}
+</style>
+<script>
+	var str1 ; 
+	var str2 ; 
+
+	function fib_recursive(num) {
+		str1 = str1 + " " + num;
+		if (num == 0) {
+			return 0;
+		}
+		else if (num == 1) {
+			return 1;
+		}
+		return fib_recursive(num - 1) + fib_recursive(num - 2);
+	}
+
+	function fib_loop(num) {
+
+		var num = parseInt(myform.txt1.value);
+		var a = 0; var b = 1; var c = 0;
+
+		for (var i = 0 ; i < num ; i++) {
+			c = a + b;
+			a = b;
+			b = c;
+			str2 = str2 + " " + i
+		}
+
+		str2 = str2 + " " + num
+		return a;
+	}
+
+	function show(){
+
+		if (myform.txt1.value == '') {
+			alert('N을 입력하세요.')
+			myform.txt1.focus();
+			return;
+		}
+
+		var num = parseInt(myform.txt1.value);
+
+		if (num > 10 | num < 0) {
+			alert('N은 (0 <= N <= 10)')
+			myform.txt1.focus()
+			return;
+		}
+
+		var res;
+		str1 = "recursive 방식: ";
+		res = fib_recursive(num);
+		str1 = str1 + " : " + res;
+		document.getElementById("msg").innerHTML = str1;
+
+		str2 = "loop 방식: ";
+		res = fib_loop(num);
+		str2 = str2 + " : " + res;
+		document.getElementById("msg2").innerHTML = str2;
+	}
+
+	function showClear(){
+		str1 = "recursive 방식: ";
+		str2 = "loop 방식: ";
+		document.getElementById("msg").innerHTML = str1 ;
+		document.getElementById("msg2").innerHTML = str2 ;
+		myform.reset();
+	}
+</script>
+</head>
+<body>
+<form name="myform">
+	<div class="box1">
+		피보나치 수열
+	</div>
+	<div class="box2">
+		N(입력) <input type="text" name="txt1" size="6">
+		<input type="button" value="수열생성" onclick="show()">
+		<input type="button" value="지우기" onclick="showClear()">
+	</div> 	 
+	<div id="msg">
+	</div>
+	<div id="msg2">
+	</div>
+</form>
+</body>
+</html>

@@ -1,1 +1,1 @@
-# 2022_PNU_STUDY
+# PNU_CSE_study

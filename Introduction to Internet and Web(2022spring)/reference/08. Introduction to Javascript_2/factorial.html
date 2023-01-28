@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<title>Factorial</title>
+<script>	 
+
+	var str;
+	function show() {
+		str = "" ;
+		var res = factorial1(4);
+		str = str + ": " + res;
+		document.getElementById("msg").innerHTML = str ;
+	}
+
+	function factorial1(num){
+		var result = 1;
+		for (var i = 1; i <= num; i++){
+			str = str + " " + i;
+			result = result * i;
+		}
+		return result;
+	}
+
+	// n!  = n * (n-1)!
+	/*
+		 4! = 4 * 3!
+		 		4 * (3 * 2!)
+				 	4 * (3 * (2 * 1!))
+					 	4 * (3 * (2 * 1))
+	*/
+
+	// recursive function (재귀함수)
+	function factorial2(num){
+		str = str + " " + num;
+		if (num == 1) return 1;
+		return num * factorial2(num-1);
+	}
+	 
+</script>
+</head>
+<body>
+<form name="myform">	
+	<input type="button" value="factorial" onclick="show()">	
+	<div id="msg">		
+	</div>
+</form>
+</body>
+</html>
